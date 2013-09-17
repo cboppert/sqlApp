@@ -1,7 +1,8 @@
 SqlApp::Application.routes.draw do
-  get "sql_pages/home"
-  get "sql_pages/about"
-  get "sql_pages/contact"
+    root 'sql_pages#home'
+    match '/about', to: 'sql_pages#about', via: 'get'
+    match '/contact', to: 'sql_pages#contact', via: 'get'
+    match '/help', to: 'sql_pages#help', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

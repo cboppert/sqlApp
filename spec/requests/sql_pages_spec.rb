@@ -4,40 +4,34 @@ describe "SqlPages" do
 
     let(:base_title) {"SQLHelp"}
 
-    describe "Home page" do
-        it "should have the content 'SQLHelp'" do
-            visit '/sql_pages/home'
-            expect(page).to have_content('SQLHelp')
-        end
+    subject { page }
 
-        it "should have the title 'Home'" do
-            visit '/sql_pages/home'
-            expect(page).to have_title("#{base_title} | Home")
-        end
+    describe "Home page" do
+        before { visit root_path }
+
+        it { should have_content('SQLHelp') }
+        it { should have_title(full_title('')) }
+        it { should_not have_title("| home") }
     end
 
     describe "Contact page" do
-        it "should have the content 'SQLHelp | Contact Us'" do
-            visit '/sql_pages/contact'
-            expect(page).to have_content('SQLHelp | Contact Us')
-        end
+        before { visit contact_path }
 
-        it "should have the title 'Contact'" do
-            visit '/sql_pages/contact'
-            expect(page).to have_title("#{base_title} | Contact")
-        end
+        it { should have_content('Contact Us') }
+        it { should have_title(full_title('Contact')) }
     end
 
     describe "About page" do
-        it "should have the content 'SQLHelp | About'" do
-            visit '/sql_pages/about'
-            expect(page).to have_content('SQLHelp | About')
-        end
+        before { visit about_path }
 
-        it "should have the title 'About'" do
-            visit '/sql_pages/about'
-            expect(page).to have_title("#{base_title} | About")
-        end
+        it { should have_content('About') }
+        it { should have_title(full_title('About')) }
     end
-     
+
+    describe "Help page" do
+        before { visit help_path }
+
+        it { should have_content('Help') }
+        it { should have_title(full_title('Help')) }
+    end
 end
