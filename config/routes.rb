@@ -1,4 +1,7 @@
 SqlApp::Application.routes.draw do
+  get "sql_pages/home"
+  get "sql_pages/about"
+  get "sql_pages/contact"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -22,4 +22,4 @@ def secure_token
     end
 end
 
-sqlApp::Application.config.secret_key_base = secure_token
+SqlApp::Application.config.secret_key_base = secure_token

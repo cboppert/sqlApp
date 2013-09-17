@@ -1,0 +1,2 @@
+module SqlPagesHelper
+end
