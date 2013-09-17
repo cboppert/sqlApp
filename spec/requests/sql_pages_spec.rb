@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe "SqlPages" do
 
+    let(:base_title) {"SQLHelp"}
+
     describe "Home page" do
         it "should have the content 'SQLHelp'" do
             visit '/sql_pages/home'
@@ -10,7 +12,7 @@ describe "SqlPages" do
 
         it "should have the title 'Home'" do
             visit '/sql_pages/home'
-            expect(page).to have_title("SQLHelp | Home")
+            expect(page).to have_title("#{base_title} | Home")
         end
     end
 
@@ -22,7 +24,7 @@ describe "SqlPages" do
 
         it "should have the title 'Contact'" do
             visit '/sql_pages/contact'
-            expect(page).to have_title("SQLHelp | Contact")
+            expect(page).to have_title("#{base_title} | Contact")
         end
     end
 
@@ -34,7 +36,7 @@ describe "SqlPages" do
 
         it "should have the title 'About'" do
             visit '/sql_pages/about'
-            expect(page).to have_title("SQLHelp | About")
+            expect(page).to have_title("#{base_title} | About")
         end
     end
      
